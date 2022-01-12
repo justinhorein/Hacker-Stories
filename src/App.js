@@ -22,23 +22,14 @@ const App = () => {
     }
   ];
 
-
-  let d;
   // Callback Handler
   const handleSearch = (event) => {
-    // console.log(event.target.value);
-    d = event.target.value;
-  }
-
-  const taco = () => {
-    console.log(d);
+    console.log(event.target.value);
   }
 
   return (
     <div>
       <h1>My Hacker Stories</h1>
-
-      <button onClick={taco}></button>
 
       <Search onSearch={handleSearch} />
 
