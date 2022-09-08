@@ -92,8 +92,8 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>My Hacker Stories</h1>
+    <div className="container">
+      <h1 className="headline-primary">My Hacker Stories</h1>
 
       <SearchForm
         searchTerm={searchTerm}
@@ -115,7 +115,7 @@ const App = () => {
 };
 
 const SearchForm = ({ searchTerm, onSearchInput, onSearchSubmit }) => (
-    <form onSubmit={onSearchSubmit}>
+    <form onSubmit={onSearchSubmit} className="search-form">
       <InputWithLabel
         id="search"
         value={searchTerm}
@@ -128,6 +128,7 @@ const SearchForm = ({ searchTerm, onSearchInput, onSearchSubmit }) => (
       <button
         type="submit"
         disabled={!searchTerm}
+        className="button button_large"
       >
         Submit
       </button>
@@ -145,13 +146,14 @@ const InputWithLabel = ({ id, children, value, type='text', onInputChange, isFoc
     }, [isFocused])
     return (
       <>
-        <label htmlFor={id}>{children} </label>
+        <label htmlFor={id} className="label">{children} </label>
         <input 
           id={id}
           type={type}
           value={value}
           ref={inputRef}
           onChange={onInputChange}
+          className="input"
         />
       </>
     );
@@ -166,7 +168,7 @@ const List = ({ list, onRemoveItem }) => (
 );
 
 const Item = ({ item, onRemoveItem }) => (
-    <li>
+    <li className="item">
       <span>
         <a href={item.url}>
           {item.title}
@@ -176,7 +178,11 @@ const Item = ({ item, onRemoveItem }) => (
       <span>{item.num_comments}</span>
       <span>{item.points}</span>
       <span>
-        <button type="button" onClick={() => onRemoveItem(item)}>
+        <button 
+          type="button" 
+          onClick={() => onRemoveItem(item)}
+          className="button button_small"
+        >
           Dismiss
         </button>
       </span>
