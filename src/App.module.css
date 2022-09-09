@@ -1,11 +1,13 @@
 .container {
+  min-height: 100vh;
+  height: 100%;
   padding: 20px;
   background: #83a4d4;
   background: linear-gradient(to left, #b6fbff, #83a4d4);
   color: #171212;
 }
 
-.headline-primary {
+.headlinePrimary {
   font-size: 48px;
   font-weight:  300;
   letter-spacing: 2px;
@@ -51,7 +53,7 @@
   margin-left: 8px;
 }
 
-.search-form {
+.searchForm {
   padding: 10px 0 20px 0;
   display: flex;
   align-items: baseline;
