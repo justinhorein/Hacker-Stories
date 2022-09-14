@@ -1,6 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import axios from 'axios';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { ReactComponent as Check } from './check.svg';
 
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
@@ -53,6 +54,15 @@ const StyledButton = styled.button`
 
 const StyledButtonSmall = styled(StyledButton)`
   padding: 5px;
+
+  svg  {
+    transform: translateY(2px);
+  }
+
+  &:hover > svg > g {
+    fill: #ffffff;
+    stroke: #ffffff;
+  }
 `;
 
 const StyledButtonLarge = styled(StyledButton)`
@@ -259,7 +269,7 @@ const Item = ({ item, onRemoveItem }) => (
           type="button"
           onClick={() => onRemoveItem(item)}
         >
-          Dismiss
+          <Check height="18px" width="18px" />
         </StyledButtonSmall>
       </StyledColumn>
     </StyledItem>
